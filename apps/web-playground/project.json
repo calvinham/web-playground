@@ -5,7 +5,7 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/webpack:webpack",
+      "executor": "@nrwl/vite:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
@@ -16,10 +16,7 @@
         "main": "apps/web-playground/src/main.tsx",
         "polyfills": "apps/web-playground/src/polyfills.ts",
         "tsConfig": "apps/web-playground/tsconfig.app.json",
-        "assets": [
-          "apps/web-playground/src/favicon.ico",
-          "apps/web-playground/src/assets"
-        ],
+        "assets": ["apps/web-playground/src/favicon.ico", "apps/web-playground/src/assets"],
         "styles": [],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
@@ -48,10 +45,11 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/webpack:dev-server",
+      "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "web-playground:build",
+        "port": 4200,
         "hmr": true
       },
       "configurations": {

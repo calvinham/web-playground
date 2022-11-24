@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@wb/ui": ["libs/ui/src/index.ts"],
-      "@web-playground/bean": ["libs/bean/src/index.ts"]
+      "@wb/beanstalk": ["libs/beanstalk/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

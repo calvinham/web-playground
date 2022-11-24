@@ -6,8 +6,9 @@
     "start": "nx serve",
     "build": "nx build",
     "test": "nx test",
-    "clean": "rm -rf libs/bean/src/generated && echo \"Cleaned libs/bean/src/generated.\"",
-    "generate:typechain": "echo \"Generating: typechain ethers-v5\" && typechain --target=ethers-v5 --ts-nocheck --out-dir=libs/bean/src/generated 'libs/bean/src/constants/abi/**/*.json'",
+    "clean": "rm -rf libs/beanstalk/src/generated && echo \"Cleaned libs/beanstalk/src/generated.\"",
+    "generate": "yarn clean && yarn generate:typechain && yarn generate:graphql && echo \"Done generating files.\"",
+    "generate:typechain": "echo \"Generating: typechain ethers-v5\" && typechain --target=ethers-v5 --ts-nocheck --out-dir=libs/beanstalk/src/generated 'libs/beanstalk/src/constants/abi/**/*.json'",
     "generate:graphql": "echo \"Generating: graphql-codegen\" && graphql-codegen --config codegen.yml"
   },
   "private": true,
@@ -74,6 +75,7 @@
     "@types/react-dom": "18.0.6",
     "@types/react-redux": "^7.1.11",
     "@types/react-router-dom": "^5.1.6",
+    "@typechain/ethers-v5": "^10.1.1",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "@visx/gradient": "^2.10.0",
@@ -94,6 +96,7 @@
     "react-test-renderer": "18.2.0",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
+    "typechain": "^8.1.1",
     "typescript": "~4.8.2"
   },
   "engines": {

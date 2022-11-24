@@ -15,6 +15,15 @@ export const paletteColors = {
   cultured: '#EFF2EF', // white
 };
 
+declare module '@mui/material/styles' {
+  interface Palette {
+    tertiary?: PaletteOptions['primary'];
+  }
+  interface PaletteOptions {
+    tertiary?: PaletteOptions['primary'];
+  }
+}
+
 const basePalette: Partial<ThemeOptions['palette']> = {
   primary: {
     main: paletteColors.oxfordBlue,

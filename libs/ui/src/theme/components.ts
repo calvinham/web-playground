@@ -11,6 +11,16 @@ const themeComponents: Partial<ThemeOptions['components']> = {
       }),
     },
   },
+  MuiInput: {
+    styleOverrides: {
+      root: sx({
+        maxHeight: 42,
+      }),
+      disabled: sx({
+        pointerEvents: 'auto',
+      }),
+    },
+  },
 };
 
 export default themeComponents;

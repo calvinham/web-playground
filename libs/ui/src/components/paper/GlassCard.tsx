@@ -17,6 +17,7 @@ const GlassCard: React.FC<IGlassCard & CardProps> = ({ blur = 20, saturate = 100
     }),
     [blur, saturate]
   );
+
   return <Card {...props} sx={{ ...props.sx, ...styles }} />;
 };
 

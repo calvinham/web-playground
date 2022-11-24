@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wb/ui": ["libs/ui/src/index.ts"]
+      "@wb/ui": ["libs/ui/src/index.ts"],
+      "@web-playground/bean": ["libs/bean/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

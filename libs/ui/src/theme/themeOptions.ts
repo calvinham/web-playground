@@ -1,6 +1,7 @@
 import { PaletteMode, ThemeOptions } from '@mui/material';
 import themeComponents from './components';
 import palettes from './palette';
+import typographyOptions from './typography';
 
 const themeOptions = (mode: PaletteMode): ThemeOptions => ({
   breakpoints: {
@@ -18,6 +19,7 @@ const themeOptions = (mode: PaletteMode): ThemeOptions => ({
     mode,
     ...palettes[mode],
   },
+  typography: typographyOptions,
 });
 
 export default themeOptions;

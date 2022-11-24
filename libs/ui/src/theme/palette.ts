@@ -11,7 +11,7 @@ export const paletteColors = {
   inchworm: '#A1E44D', // light neon green
   mayGreen: '#60993E', // green,
   white: '#FFFFFF',
-  black: '#000000',
+  black: '#04080f',
   cultured: '#EFF2EF', // white
 };
 
@@ -24,12 +24,14 @@ declare module '@mui/material/styles' {
   }
 }
 
-const basePalette: Partial<ThemeOptions['palette']> = {
+const darkPalette: Partial<ThemeOptions['palette']> = {
   primary: {
-    main: paletteColors.oxfordBlue,
+    main: paletteColors.steelBlue,
+    contrastText: paletteColors.platinum,
   },
   secondary: {
     main: paletteColors.inchworm,
+    contrastText: paletteColors.platinum,
   },
   tertiary: {
     main: paletteColors.alloyOrange,
@@ -37,20 +39,41 @@ const basePalette: Partial<ThemeOptions['palette']> = {
   error: {
     main: paletteColors.darkRed,
   },
+  background: {
+    default: paletteColors.richBlack,
+  },
+  text: {
+    primary: paletteColors.platinum,
+  },
+};
+
+const lightPalette: Partial<ThemeOptions['palette']> = {
+  primary: {
+    main: paletteColors.steelBlue,
+    contrastText: paletteColors.platinum,
+  },
+  secondary: {
+    main: paletteColors.inchworm,
+    contrastText: paletteColors.platinum,
+  },
+  tertiary: {
+    main: paletteColors.alloyOrange,
+  },
+  error: {
+    main: paletteColors.darkRed,
+  },
+  background: {
+    default: paletteColors.platinum,
+  },
+  text: {
+    primary: paletteColors.black,
+  },
 };
 
 const palettes = {
-  dark: {
-    ...basePalette,
-    background: {
-      default: paletteColors.richBlack,
-    },
-  },
+  dark: { ...darkPalette },
   light: {
-    ...basePalette,
-    background: {
-      default: paletteColors.gainsboro,
-    },
+    ...lightPalette,
   },
 };
 

@@ -5,11 +5,14 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "clean": "rm -rf libs/bean/src/generated && echo \"Cleaned libs/bean/src/generated.\"",
+    "generate:typechain": "echo \"Generating: typechain ethers-v5\" && typechain --target=ethers-v5 --ts-nocheck --out-dir=libs/bean/src/generated 'libs/bean/src/constants/abi/**/*.json'",
+    "generate:graphql": "echo \"Generating: graphql-codegen\" && graphql-codegen --config codegen.yml"
   },
   "private": true,
   "dependencies": {
-    "@apollo/client": "^3.4.10",
+    "@apollo/client": "^3.7.1",
     "@curvefi/api": "^2.1.0",
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
@@ -34,6 +37,7 @@
     "ethers-multicall": "^0.2.3",
     "events": "^3.3.0",
     "formik": "^2.2.9",
+    "graphql": "^16.6.0",
     "jotai": "^1.10.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -41,10 +45,16 @@
     "react-router-dom": "6",
     "react-spring": "^9.4.4",
     "regenerator-runtime": "0.13.7",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "wagmi": "^0.8.6"
   },
   "devDependencies": {
     "@emotion/babel-plugin": "11.10.2",
+    "@graphql-codegen/cli": "2.7.0",
+    "@graphql-codegen/introspection": "2.1.1",
+    "@graphql-codegen/typescript": "2.6.0",
+    "@graphql-codegen/typescript-operations": "^2.4.3",
+    "@graphql-codegen/typescript-react-apollo": "3.2.17",
     "@nrwl/cli": "15.2.0",
     "@nrwl/cypress": "15.2.0",
     "@nrwl/eslint-plugin-nx": "15.2.0",

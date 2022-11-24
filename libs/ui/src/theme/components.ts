@@ -4,7 +4,7 @@ const themeComponents: Partial<ThemeOptions['components']> = {
   MuiButton: {
     styleOverrides: {
       root: sx({
-        maxHeight: 42,
+        maxHeight: 48,
       }),
       disabled: sx({
         pointerEvents: 'auto',
@@ -14,7 +14,7 @@ const themeComponents: Partial<ThemeOptions['components']> = {
   MuiInput: {
     styleOverrides: {
       root: sx({
-        maxHeight: 42,
+        maxHeight: 48,
       }),
       disabled: sx({
         pointerEvents: 'auto',

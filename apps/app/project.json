@@ -1,7 +1,7 @@
 {
-  "name": "web-playground",
+  "name": "app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/web-playground/src",
+  "sourceRoot": "apps/app/src",
   "projectType": "application",
   "targets": {
     "build": {
@@ -10,13 +10,13 @@
       "defaultConfiguration": "production",
       "options": {
         "compiler": "babel",
-        "outputPath": "dist/apps/web-playground",
-        "index": "apps/web-playground/src/index.html",
+        "outputPath": "dist/apps/app",
+        "index": "apps/app/src/index.html",
         "baseHref": "/",
-        "main": "apps/web-playground/src/main.tsx",
-        "polyfills": "apps/web-playground/src/polyfills.ts",
-        "tsConfig": "apps/web-playground/tsconfig.app.json",
-        "assets": ["apps/web-playground/src/favicon.ico", "apps/web-playground/src/assets"],
+        "main": "apps/app/src/main.tsx",
+        "polyfills": "apps/app/src/polyfills.ts",
+        "tsConfig": "apps/app/tsconfig.app.json",
+        "assets": ["apps/app/src/favicon.ico", "apps/app/src/assets"],
         "styles": [],
         "scripts": [],
         "webpackConfig": "@nrwl/react/plugins/webpack"
@@ -31,8 +31,8 @@
         "production": {
           "fileReplacements": [
             {
-              "replace": "apps/web-playground/src/environments/environment.ts",
-              "with": "apps/web-playground/src/environments/environment.prod.ts"
+              "replace": "apps/app/src/environments/environment.ts",
+              "with": "apps/app/src/environments/environment.prod.ts"
             }
           ],
           "optimization": true,
@@ -48,16 +48,16 @@
       "executor": "@nrwl/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "web-playground:build",
+        "buildTarget": "app:build",
         "port": 4200,
         "hmr": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "web-playground:build:development"
+          "buildTarget": "app:build:development"
         },
         "production": {
-          "buildTarget": "web-playground:build:production",
+          "buildTarget": "app:build:production",
           "hmr": false
         }
       }
@@ -66,14 +66,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/web-playground/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/web-playground/jest.config.ts",
+        "jestConfig": "apps/app/jest.config.ts",
         "passWithNoTests": true
       }
     }

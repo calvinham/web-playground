@@ -1,6 +1,6 @@
+import React from 'react';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { useThemeMode, paletteColors } from '@wb/ui';
-import React from 'react';
 
 const Entry: React.FC = () => {
   const [mode, toggle] = useThemeMode();
@@ -13,8 +13,8 @@ const Entry: React.FC = () => {
         toggle
       </Button>
       <Stack gap={1}>
-        {Object.entries(palette).map(([color, colorValue], i) => (
-          <Stack direction="row" gap={1} alignItems="center">
+        {Object.entries(palette).map(([color, colorValue]) => (
+          <Stack direction="row" gap={1} alignItems="center" key={color}>
             <Box
               sx={{
                 width: '10px',

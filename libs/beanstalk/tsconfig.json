@@ -15,6 +15,7 @@
   },
   "files": [],
   "include": [],
+  "exclude": ["./src/generated/**/*", "./src/graph/graphql.schema.json"],
   "references": [
     {
       "path": "./tsconfig.lib.json"

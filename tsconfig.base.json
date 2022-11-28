@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@wb/ui": ["libs/ui/src/index.ts"],
-      "@wb/beanstalk": ["libs/beanstalk/src/index.ts"]
+      "@app/web3lib": ["libs/web3lib/src/index.ts"],
+      "@wb/beanstalk": ["libs/beanstalk/src/index.ts"],
+      "@wb/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

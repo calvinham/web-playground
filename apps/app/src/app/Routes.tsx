@@ -1,4 +1,5 @@
-import { Routes as RouterRoutes, Route } from 'react-router-dom';
+import { Route, Routes as RouterRoutes } from 'react-router-dom';
+
 import Bean from '../pages/Bean';
 import Entry from '../pages/Entry';
 

@@ -1,12 +1,24 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "npmScope": "app",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "MjIyODRmMTMtMzhlNy00OTY4LWIyNWUtYjcwY2ZmZWI3NWYyfHJlYWQtd3JpdGU="
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -14,15 +26,6 @@
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["production", "^production"]
-    },
-    "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     }
   },
   "namedInputs": {
@@ -40,7 +43,6 @@
     "@nrwl/react": {
       "application": {
         "style": "@emotion/styled",
-        "unitTestRunner": "jest",
         "linter": "eslint",
         "babel": true
       },
@@ -49,7 +51,6 @@
       },
       "library": {
         "style": "@emotion/styled",
-        "unitTestRunner": "jest",
         "linter": "eslint"
       }
     }

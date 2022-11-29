@@ -1,5 +1,6 @@
-import { Box, Stack, styled, Typography } from '@mui/material';
 import React from 'react';
+
+import { Box, Stack, styled, Typography } from '@mui/material';
 import { paletteColors } from '@wb/ui';
 
 const NAV_HEIGHT = 48;
@@ -7,7 +8,7 @@ const NAV_HEIGHT = 48;
 const Container = styled(Box)(({ theme }) => ({
   width: '100%',
   height: NAV_HEIGHT,
-  background: theme.palette.primary.main,
+  background: theme.palette.primary.main
 }));
 
 const InnerContainer = styled(Stack)(() => ({
@@ -15,13 +16,13 @@ const InnerContainer = styled(Stack)(() => ({
   height: '100%',
   alignItems: 'center',
   width: '100%',
-  boxSizing: 'border-box',
+  boxSizing: 'border-box'
 }));
 
 const sharedStyles = {
   sx: {
-    color: paletteColors.platinum,
-  },
+    color: paletteColors.platinum
+  }
 };
 
 const NavBar: React.FC = () => {

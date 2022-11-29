@@ -1,0 +1,108 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx", "prettier"],
+  "extends": "prettier",
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "rules": {
+        "@nrwl/nx/enforce-module-boundaries": [
+          "error",
+          {
+            "enforceBuildableLibDependency": true,
+            "allow": [],
+            "depConstraints": [
+              {
+                "sourceTag": "*",
+                "onlyDependOnLibsWithTags": ["*"]
+              }
+            ]
+          }
+        ],
+        "@typescript-eslint/no-non-null-asserted-optional-chain": "error"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "comma-dangle": ["error", "never"],
+        "eol-last": "error",
+        "import/order": [
+          "error",
+          {
+            "groups": ["builtin", "external", "internal"],
+            "pathGroups": [
+              {
+                "pattern": "react",
+                "group": "external",
+                "position": "before"
+              }
+            ],
+            "pathGroupsExcludedImportTypes": ["react"],
+            "newlines-between": "always",
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            }
+          }
+        ],
+        "no-duplicate-imports": "error",
+        "no-restricted-imports": [
+          "error",
+          {
+            "paths": [
+              {
+                "message": "Please use import foo from 'lodash-es/foo' instead.",
+                "name": "lodash"
+              },
+              {
+                "message": "Avoid using chain since it is non tree-shakable. Try out flow instead.",
+                "name": "lodash-es/chain"
+              },
+              {
+                "importNames": ["chain"],
+                "message": "Avoid using chain since it is non tree-shakable. Try out flow instead.",
+                "name": "lodash-es"
+              },
+              {
+                "message": "Please use import foo from 'lodash-es/foo' instead.",
+                "name": "lodash-es"
+              }
+            ],
+            "patterns": ["lodash/**", "lodash/fp/**"]
+          }
+        ],
+        "no-unused-vars": "error",
+        "react/jsx-filename-extension": [
+          "error",
+          {
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+          }
+        ],
+        "sort-imports": [
+          "error",
+          {
+            "ignoreCase": false,
+            "ignoreDeclarationSort": true,
+            "ignoreMemberSort": false
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.js", "*.jsx"],
+      "extends": ["plugin:@nrwl/nx/javascript"],
+      "rules": {}
+    }
+  ]
+}

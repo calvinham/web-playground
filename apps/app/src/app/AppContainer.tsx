@@ -1,5 +1,6 @@
-import { Box, styled } from '@mui/material';
 import React from 'react';
+
+import { Box, styled } from '@mui/material';
 
 type IProps = {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ type IProps = {
 const OuterWrapper = styled(Box)(({ theme }) => ({
   width: '100vw',
   height: '100vh',
-  background: theme.palette.background.default,
+  background: theme.palette.background.default
 }));
 
 export default function AppContainer({ children }: IProps) {

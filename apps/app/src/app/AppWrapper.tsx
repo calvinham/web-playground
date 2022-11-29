@@ -1,8 +1,10 @@
-import { HashRouter } from 'react-router-dom';
 import React from 'react';
+
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { useInitMuiTheme } from '@wb/ui';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import { HashRouter } from 'react-router-dom';
 import { WagmiConfig } from 'wagmi';
+
 import { web3Client } from '../util';
 
 type IProps = {

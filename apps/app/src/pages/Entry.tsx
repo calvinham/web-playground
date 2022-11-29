@@ -1,6 +1,7 @@
 import React from 'react';
+
 import { Box, Button, Stack, Typography } from '@mui/material';
-import { useThemeMode, paletteColors } from '@wb/ui';
+import { paletteColors, useThemeMode } from '@wb/ui';
 
 const Entry: React.FC = () => {
   const [mode, toggle] = useThemeMode();
@@ -21,7 +22,7 @@ const Entry: React.FC = () => {
                 height: '10px',
                 borderRadius: '50%',
                 background: colorValue,
-                border: '1px solid black',
+                border: '1px solid black'
               }}
             />
             <Typography>{color}</Typography>

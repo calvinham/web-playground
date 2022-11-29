@@ -90,4 +90,5 @@ const toFormat: {
   (fn: BigConstructor): WrappedBigConstructor;
   (fn: DecimalConstructor): WrappedDecimalConstructor;
 } = _toFarmat;
+
 export default toFormat;

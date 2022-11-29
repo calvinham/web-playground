@@ -1,5 +1,5 @@
 export type ChainConstant<T> = { [chainId: number]: T };
 
-export enum SupportedChain {
+export enum SupportedChainId {
   MAINNET = 1,
 }

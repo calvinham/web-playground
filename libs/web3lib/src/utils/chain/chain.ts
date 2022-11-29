@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
-import { ChainConstant, SupportedChain } from './types';
+import { ChainConstant, SupportedChainId } from './types';
 import { useNetwork } from 'wagmi';
 
 export function getChainConstant<T extends ChainConstant<any>>(map: T, chainId?: number) {
-  if (!chainId || !SupportedChain[chainId]) {
-    return map[SupportedChain.MAINNET];
+  if (!chainId || !SupportedChainId[chainId]) {
+    return map[SupportedChainId.MAINNET];
   }
   return map[chainId];
 }

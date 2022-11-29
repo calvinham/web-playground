@@ -1,6 +1,5 @@
 {
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "npmScope": "app",
+  "npmScope": "web-playground",
   "affected": {
     "defaultBase": "main"
   },
@@ -21,6 +20,14 @@
         "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
   },
   "targetDefaults": {
     "build": {

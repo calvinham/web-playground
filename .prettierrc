@@ -1,8 +1,6 @@
 {
   "arrowParens": "always",
   "bracketSpacing": true,
-  "endOfLine": "lf",
-  "jsxBracketSameLine": false,
   "jsxSingleQuote": false,
   "printWidth": 100,
   "proseWrap": "preserve",
@@ -11,5 +9,5 @@
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "none",
-  "use Tabs": false
+  "useTabs": false
 }
